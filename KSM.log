@@ -1,0 +1,4 @@
+2015-12-20 01:10:16,705 [0      ] [CheckArgument] !main! [21] [ERROR] [utility.Validator] Validator.java - Invalid number of arguments
+2015-12-20 01:10:16,705 [0      ] [CheckArgument] !main! [22] [ERROR] [utility.Validator] Validator.java - 
+	Usage : prog <DirectoryPath> <StatsType1:StatsName1, ... ,StatsType(n):StatsName(n)>
+	Where StatsType is either PERFORMANCE or COUNT

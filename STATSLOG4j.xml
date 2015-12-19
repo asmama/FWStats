@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+
+    <!-- ================================================= -->
+    <!-- CONSOLEAPPENDER                                   -->
+    <!-- ================================================= -->
+    <appender name="screenAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <param name="Threshold" value="debug"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-7p] -%m%n"/>
+	</layout>
+    </appender>
+
+    <appender name="msgOnly" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/TPRMSG.log" />
+        <param name="DatePattern" value="'.'yyyyMMdd"/>
+        <param name="Append" value="true"/>
+        <param name="Threshold" value="trace"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- ================================================= -->
+    <!-- FILEAPPENDER                                      -->
+    <!-- ================================================= -->
+    <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+        <param name="File" value="log/TPR.log" />
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} - %m%n"/>
+	</layout>
+    </appender>
+
+    <!-- ================================================= -->
+    <!-- FILEAPPENDER2 (for backup purposes)               -->
+    <!-- ================================================= -->
+    <appender name="fileAppender2" class="org.apache.log4j.FileAppender">
+        <param name="File" value="KSM.log" />
+        <param name="Append" value="true" />        
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-7r] [%M] !%t! [%L] [%p] [%c{2}] %F - %m%n"/>
+	</layout>   
+    </appender>
+
+    <!-- ================================================= -->
+    <!-- FILEAPPENDER3 - ROLLING                           -->
+    <!-- ================================================= -->
+
+   <appender name="fileAppender3" class="org.apache.log4j.RollingFileAppender">
+      <param name="File" value="log/TPR.log"/>
+      <param name="Append" value="true" />
+      <param name="Threshold" value="debug"/>
+      <param name="MaxFileSize" value="10000000"/>
+      <param name="MaxBackupIndex" value="20"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d{ISO8601} [%-7p] - %m%n"/>
+         <!-- === discarded [%c{2}]=== -->
+         <!-- === discarded [%-20F]=== -->
+      </layout>
+   </appender>
+
+    <logger name="my.asufian.openet">
+           
+    </logger>
+
+    <logger name="my.asufian.openet.utility">
+           <appender-ref ref="fileAppender2"/>
+    </logger>
+
+    <logger name="ml.tpr.tcpserver">
+            <appender-ref ref="fileAppender3"/>
+    </logger>
+
+    <logger name="ml.tpr.tool">
+            <appender-ref ref="fileAppender3"/>
+    </logger>
+
+    <logger name="ml.tpr.tool.MsgTitaTota">
+            <appender-ref ref="msgOnly"/>
+    </logger>
+
+    <!-- ================================================= -->
+    <!-- VOID - example of package different level         -->
+    <!-- ================================================= -->
+    <!-- <level value="trace"> -->
+
+    <!-- ================================================= -->
+    <!-- [root] definition                                 -->
+    <!-- ================================================= -->
+    <root>
+        <priority value="ALL"/>
+        <appender-ref ref="screenAppender"/>
+    </root>
+
+</log4j:configuration>
