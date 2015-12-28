@@ -26,9 +26,8 @@ public class Main implements Constants {
 
         final Logger logger = LoggerFactory.getLogger(Main.class);
 
-        Property property = (new PropertyFactory()).getProperty("STATS.properties");
-        DOMConfigurator.configure(property.getValue("STAT_LOGGER_FILE"));
-        
+        DOMConfigurator.configure(PropertyFactory.getProperty
+            ("STATS.properties").getValue("STAT_LOGGER_FILE"));
         Validator.CheckArgument(args);
         //AbstractFactory statsFactory = FactoryProducer.getFactory(FactoryType.STATS);
         //System.out.println(FactoryType.STATS.toString());

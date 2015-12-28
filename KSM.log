@@ -2,3 +2,18 @@
 2015-12-20 01:10:16,705 [0      ] [CheckArgument] !main! [22] [ERROR] [utility.Validator] Validator.java - 
 	Usage : prog <DirectoryPath> <StatsType1:StatsName1, ... ,StatsType(n):StatsName(n)>
 	Where StatsType is either PERFORMANCE or COUNT
+2015-12-28 10:31:09,468 [0      ] [CheckStatsType] !main! [87] [DEBUG] [utility.Validator] Validator.java - given=[adsfasdf:sfdgsdfg];splitted=[adsfasdf]
+2015-12-28 10:31:09,471 [3      ] [CheckStatsType] !main! [90] [TRACE] [utility.Validator] Validator.java - comparedWith=performance
+2015-12-28 10:31:09,471 [3      ] [CheckStatsType] !main! [90] [TRACE] [utility.Validator] Validator.java - comparedWith=count
+2015-12-28 10:31:09,473 [5      ] [Notify] !main! [80] [ERROR] [utility.Validator] Validator.java - Invalid reportType specified
+2015-12-28 10:31:09,474 [6      ] [Notify] !main! [81] [ERROR] [utility.Validator] Validator.java - 
+	Usage : prog <DirectoryPath> <StatsType1:StatsName1, ... ,StatsType(n):StatsName(n)>
+	Where StatsType is either PERFORMANCE or COUNT
+2015-12-28 10:31:28,820 [0      ] [CheckStatsType] !main! [87] [DEBUG] [utility.Validator] Validator.java - given=[performance:sfdgsdfg];splitted=[performance]
+2015-12-28 10:31:28,822 [2      ] [CheckStatsType] !main! [90] [TRACE] [utility.Validator] Validator.java - comparedWith=performance
+2015-12-28 11:37:56,892 [0      ] [CheckStatsType] !main! [87] [DEBUG] [utility.Validator] Validator.java - given=[performance:sfdgsdfg];splitted=[performance]
+2015-12-28 11:37:56,897 [5      ] [CheckStatsType] !main! [90] [TRACE] [utility.Validator] Validator.java - comparedWith=performance
+2015-12-28 11:50:20,145 [0      ] [CheckStatsType] !main! [111] [DEBUG] [utility.Validator] Validator.java - given=[performance:sfdgsdfg];splitted=[performance]
+2015-12-28 11:50:20,148 [3      ] [CheckStatsType] !main! [114] [TRACE] [utility.Validator] Validator.java - comparedWith=performance
+2015-12-28 15:51:02,090 [0      ] [CheckStatsType] !main! [115] [DEBUG] [utility.Validator] Validator.java - given=[performance:sfdgsdfg];splitted=[performance]
+2015-12-28 15:51:02,092 [2      ] [CheckStatsType] !main! [118] [TRACE] [utility.Validator] Validator.java - comparedWith=performance

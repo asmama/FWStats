@@ -30,20 +30,9 @@ public class Props implements Property, Constants {
     }
 
     /**
-     * Helper method to list all available properties pairs.
-     */
-    @Override
-    public void listAllProperties() {
-        Set<Object> keys = props.keySet();
-        keys.stream().forEach((key) -> {
-            logger.debug("key={" + key + "};value=[" + props.getProperty(key.toString()) + "]");
-        });
-    }
-
-    /**
      * Return value from property file.
      *
-     * @param key
+     * @param key to search
      * @return value if found, blank otherwise
      */
     @Override
@@ -57,5 +46,16 @@ public class Props implements Property, Constants {
         }
 
         return props.getProperty(key);
+    }
+    
+    /**
+     * Helper method to list all available properties pairs.
+     */
+    @Override
+    public void listAllProperties() {
+        Set<Object> keys = props.keySet();
+        keys.stream().forEach((key) -> {
+            logger.debug("key={" + key + "};value=[" + props.getProperty(key.toString()) + "]");
+        });
     }
 }
