@@ -22,7 +22,7 @@ public class Util implements Constants {
         for (String stat : totalStats) {
             if (!stat.contains(String.valueOf(COLON))) {
                 System.err.println(Validator.CorrectArgument());
-                System.exit(Constants.ERROR_ARGUMENT);
+                System.exit(ReportError.ERROR_ARGUMENT.getErrorCode());
             }
         }
 

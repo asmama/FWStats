@@ -12,7 +12,9 @@ package my.asufian.openet.utility;
 public enum ReportError {
     
     ERROR_ARGUMENT(1001,"Invalid number of arguments"),
-    ERROR_SEPARATOR(1002,"Invalid separator given");
+    ERROR_FOLDER(1002,"Invalid folder specified"),
+    ERROR_SEPARATOR(1003,"Invalid separator given"),
+    ERROR_REPORTTYPE(1004,"Invalid reportType specified");
 
     private ReportError(int errorCode, String errorDesc) {
         this.errorCode = errorCode;

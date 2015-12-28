@@ -30,7 +30,6 @@ public class Main implements Constants {
         DOMConfigurator.configure(property.getValue("STAT_LOGGER_FILE"));
         
         Validator.CheckArgument(args);
-        Validator.CheckStatsList(args[1]);
         //AbstractFactory statsFactory = FactoryProducer.getFactory(FactoryType.STATS);
         //System.out.println(FactoryType.STATS.toString());
         //Performance perf = (Performance) statsFactory.getStats(ReportType.PERFORMANCE);

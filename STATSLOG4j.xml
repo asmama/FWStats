@@ -7,7 +7,7 @@
     <!-- ================================================= -->
     <appender name="screenAppender" class="org.apache.log4j.ConsoleAppender">
         <param name="Target" value="System.out"/>
-        <param name="Threshold" value="debug"/>
+        <param name="Threshold" value="trace"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{ISO8601} [%-7p] -%m%n"/>
 	</layout>
@@ -52,7 +52,7 @@
    <appender name="fileAppender3" class="org.apache.log4j.RollingFileAppender">
       <param name="File" value="log/TPR.log"/>
       <param name="Append" value="true" />
-      <param name="Threshold" value="debug"/>
+      <param name="Threshold" value="trace"/>
       <param name="MaxFileSize" value="10000000"/>
       <param name="MaxBackupIndex" value="20"/>
       <layout class="org.apache.log4j.PatternLayout">
