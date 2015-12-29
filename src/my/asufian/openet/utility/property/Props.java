@@ -1,6 +1,7 @@
 package my.asufian.openet.utility.property;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 import java.util.Set;
 import org.slf4j.Logger;
@@ -24,8 +25,8 @@ public class Props implements Property, Constants {
         try {
             FileInputStream fs = new FileInputStream(fileName);
             props.load(fs);
-        } catch (Exception e) {
-            System.err.println(e.fillInStackTrace().toString());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
     }
 
